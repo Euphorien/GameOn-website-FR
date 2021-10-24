@@ -38,7 +38,8 @@ img {
     float: left;
 }
 .main-navbar {
-    float: right;
+    display: flex;
+    justify-content: flex-end;
 }
 .topnav a {
   float: left;
@@ -90,16 +91,23 @@ img {
   }
 }
 
-
-
  @media screen and (max-width: 540px) {
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
   }
-} 
+}
+
+@media screen and (min-width:769px) and (max-width: 999px) {
+  .main-navbar{
+    display: inline;
+  }
+
+  .hero-headline{
+    font-size: 5rem;
+  }
+}
 
 main {
   font-size: 130%;
@@ -167,6 +175,13 @@ main {
   width: 100%;
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
+}
+
+.erreur
+{
+  display: none;
+  font-size: 16px;
+  color: red;
 }
 
 .content {
@@ -495,11 +510,11 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 150%;
     white-space: normal;
   }
   .hero-text {
-    width: unset;
+    width: 80%;
     font-size: 1.5rem;
   }
   .hero-img img {
