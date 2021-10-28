@@ -32,7 +32,7 @@ function closeModal(){
 const chiffres = /[0-9]/; // Variable regex pour les chiffres
 const regmail = (/^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/i) // Variable regex pour verifier si l'email est vaide
 const regname = (/[a-z]{2,}/i); // Variable regex pour les champs nom et prénoms
-const regbirthdate = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
+const regbirthdate = (/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
 const input = document.querySelectorAll("input"); // On récupère tout les input de notre formulaire dans une variable
 const radio = document.querySelectorAll("input[type=radio]"); // On récupère les input de type radio de notre formulaire dans une variable
 const checkbox = document.querySelector("input[type=checkbox]"); // On récupère les input de type checkbox de notre formulaire dans une variable
