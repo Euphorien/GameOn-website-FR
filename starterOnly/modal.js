@@ -71,7 +71,7 @@ document.forms[0].addEventListener("submit", (e) => {
         input[2].style.border="";
       }
 
-      if (input[3].value != input[3].value.match(regbirthdate)) { // On compare la valeur du champ birthdate avec regbirthdate
+      if (input[3].value == "") { // On verifie que le champ birthdate est bien remplie
         erreurs[3].style.display = "block";
         input[3].style.border="2px solid red";
       }
@@ -80,7 +80,7 @@ document.forms[0].addEventListener("submit", (e) => {
         input[3].style.border="";
       }
 
-      if (input[4].value == "") { // On vérifie que le champ birthdate est bien remplie
+      if (input[4].value != input[4].value.match(chiffres)) { // On vérifie que le champ contient bien des nombres avec regchiffres
         erreurs[4].style.display = "block";
         input[4].style.border="2px solid red";
       }
@@ -104,6 +104,7 @@ document.forms[0].addEventListener("submit", (e) => {
       // Si toutes les entrées sont valide , on envoi le formulaire
     if ( input[0].value && input[1].value && input[2].value && input[3].value && input[4].value &&
          (radio[0].checked || radio[1].checked || radio[2].checked || radio[3].checked || radio[4].checked || radio[5].checked) && checkbox.checked ) {
+      //alert("Validation du formulaire");
         bground2.style.display = "block";
         bgroundtext.style.display = "block";
         rectangle.style.display = "none";
