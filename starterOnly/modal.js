@@ -42,51 +42,62 @@ document.forms[0].addEventListener("submit", (e) => {
     const bground2 = document.querySelector('.bground2');
     const bgroundtext = document.getElementById("bgroundtext");
     const rectangle = document.getElementById("form");
+    let errors = [];
     e.preventDefault();
    
       if (input[0].value != input[0].value.match(regname)) { // On compare la valeur du champ prénom avec regname
         erreurs[0].style.display = "block";
         input[0].style.border="2px solid red";
+        errors.push(1);
       }
       else {
         erreurs[0].style.display = "none";
         input[0].style.border = "";
+        errors.push(0);
       }
 
       if (input[1].value != input[1].value.match(regname)) { // On compare la valeur du champ nom avec regname
         erreurs[1].style.display = "block";
         input[1].style.border="2px solid red";
+        errors.push(1);
       }
       else {
         erreurs[1].style.display = "none";
         input[1].style.border="";
+        errors.push(0);
       }
 
       if (input[2].value != input[2].value.match(regmail)) { // On compare la valeur du champ prénom avec regmail
         erreurs[2].style.display = "block";
         input[2].style.border="2px solid red";
+        errors.push(1);
       }
       else {
         erreurs[2].style.display = "none";
         input[2].style.border="";
+        errors.push(0);
       }
 
       if (input[3].value == "") { // On verifie que le champ birthdate est bien remplie
         erreurs[3].style.display = "block";
         input[3].style.border="2px solid red";
+        errors.push(1);
       }
       else {
         erreurs[3].style.display = "none";
         input[3].style.border="";
+        errors.push(0);
       }
 
       if (input[4].value != input[4].value.match(chiffres)) { // On vérifie que le champ contient bien des nombres avec regchiffres
         erreurs[4].style.display = "block";
         input[4].style.border="2px solid red";
+        errors.push(1);
       }
       else {
         erreurs[4].style.display = "none";
         input[4].style.border="";
+        errors.push(0);
       }
       if ( !radio[0].checked && !radio[1].checked && !radio[2].checked && !radio[3].checked && !radio[4].checked && !radio[5].checked) { // On check qu'une case est bien coché
         erreurs[5].style.display = "block";
@@ -102,9 +113,7 @@ document.forms[0].addEventListener("submit", (e) => {
       }
     
       // Si toutes les entrées sont valide , on envoi le formulaire
-    if ( input[0].value && input[1].value && input[2].value && input[3].value && input[4].value &&
-         (radio[0].checked || radio[1].checked || radio[2].checked || radio[3].checked || radio[4].checked || radio[5].checked) && checkbox.checked ) {
-      //alert("Validation du formulaire");
+    if ( !errors.includes(1) && (radio[0].checked || radio[1].checked || radio[2].checked || radio[3].checked || radio[4].checked || radio[5].checked) && checkbox.checked ) {
         bground2.style.display = "block";
         bgroundtext.style.display = "block";
         rectangle.style.display = "none";
